@@ -15,10 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('/change/locale/{locale}', [HomeController::class, 'changeLocale'])->name('changeLocale');
+
 Route::get('/', [HomeController::class, 'home'])->name('home');
 
 // Route::middleware('auth')->group(function () {
-Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+    Route::get('/', [AdminController::class, 'home'])->name('home');
+});
+
 // });
 
 Route::fallback(function () {

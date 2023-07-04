@@ -1,11 +1,11 @@
 @extends('dashboard.layouts.app')
 
 @section('title')
-@parent | Dashboard
+@parent | {{ trans('lang.home') }}
 @stop
 
 @section('page_header')
-Dashboard
+{{ trans('lang.home') }}
 @endsection
 
 @section('content')

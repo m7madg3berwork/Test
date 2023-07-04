@@ -6,6 +6,8 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
+      <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+
       <title>
             @section('title')
             Wyfadah
@@ -19,17 +21,12 @@
 <body class="hold-transition sidebar-mini layout-fixed">
       <div class="wrapper">
 
-            <!-- Navbar -->
             @include('dashboard.layouts.navbar')
-            <!-- /.navbar -->
 
-            <!-- Main Sidebar Container -->
             @include('dashboard.layouts.aside')
 
-            <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
 
-                  <!-- Content Header (Page header) -->
                   <div class="content-header">
                         <div class="container-fluid">
                               <div class="row mb-2">
@@ -41,25 +38,18 @@
                               </div>
                         </div>
                   </div>
-                  <!-- /.content-header -->
 
-                  <!-- Main content -->
                   <section class="content">
                         @yield('content')
                   </section>
-                  <!-- /.content -->
             </div>
 
-            <!-- /.content-wrapper -->
-            @include('dashboard.layouts.footer')
+            {{-- @include('dashboard.layouts.footer') --}}
 
-            <!-- Control Sidebar -->
-            <aside class="control-sidebar control-sidebar-dark">
-                  <!-- Control sidebar content goes here -->
-            </aside>
-            <!-- /.control-sidebar -->
+            {{-- <aside class="control-sidebar control-sidebar-dark">
+            </aside> --}}
+
       </div>
-      <!-- ./wrapper -->
 
       @include('dashboard.layouts.scripts')
       @yield('scripts')

@@ -10,4 +10,10 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function changeLocale($locale)
+    {
+        session()->put('appLocale', $locale);
+        return redirect()->back();
+    }
 }
